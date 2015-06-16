@@ -14,11 +14,6 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>openssl.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -58,6 +53,16 @@
 			<true/>
 		</dict>
 		<key>606241051B2F590B00C55FD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>60674AC11B30A6F300A1917D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>60674ACB1B30A6F300A1917D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
