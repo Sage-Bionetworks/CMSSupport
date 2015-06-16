@@ -102,16 +102,16 @@ do
 	echo "Please stand by..."
 
 	export CC="${BUILD_TOOLS}/usr/bin/gcc -arch ${ARCH}"
-	mkdir -p "${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk"
-	LOG="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/build-openssl-${VERSION}.log"
+	mkdir -p "${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk"
+	LOG="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/build-openssl-${VERSION}.log"
 
 	set +e
     if [[ "$VERSION" =~ 1.0.0. ]]; then
-	    ./Configure BSD-generic32 --openssldir="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
+	    ./Configure BSD-generic32 --openssldir="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
 	elif [ "${ARCH}" == "x86_64" ]; then
-	    ./Configure darwin64-x86_64-cc --openssldir="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
+	    ./Configure darwin64-x86_64-cc --openssldir="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
     else
-	    ./Configure iphoneos-cross --openssldir="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
+	    ./Configure iphoneos-cross --openssldir="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
     fi
     
     if [ $? != 0 ];
@@ -142,17 +142,11 @@ do
 done
 
 echo "Build library..."
-lipo -create ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/lib/libssl.a ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-x86_64.sdk/lib/libssl.a  ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv7.sdk/lib/libssl.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv7s.sdk/lib/libssl.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-arm64.sdk/lib/libssl.a -output ${CURRENTPATH}/lib/libssl.a
+lipo -create ${DERIVED_FILE_DIR}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/lib/libssl.a ${DERIVED_FILE_DIR}/bin/iPhoneSimulator${SDKVERSION}-x86_64.sdk/lib/libssl.a  ${DERIVED_FILE_DIR}/bin/iPhoneOS${SDKVERSION}-armv7.sdk/lib/libssl.a ${DERIVED_FILE_DIR}/bin/iPhoneOS${SDKVERSION}-armv7s.sdk/lib/libssl.a ${DERIVED_FILE_DIR}/bin/iPhoneOS${SDKVERSION}-arm64.sdk/lib/libssl.a -output ${BUILD_ROOT}/${PRODUCT_NAME}/libssl.a
 
-lipo -create ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/lib/libcrypto.a ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-x86_64.sdk/lib/libcrypto.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv7.sdk/lib/libcrypto.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv7s.sdk/lib/libcrypto.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-arm64.sdk/lib/libcrypto.a -output ${CURRENTPATH}/lib/libcrypto.a
+lipo -create ${DERIVED_FILE_DIR}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/lib/libcrypto.a ${DERIVED_FILE_DIR}/bin/iPhoneSimulator${SDKVERSION}-x86_64.sdk/lib/libcrypto.a ${DERIVED_FILE_DIR}/bin/iPhoneOS${SDKVERSION}-armv7.sdk/lib/libcrypto.a ${DERIVED_FILE_DIR}/bin/iPhoneOS${SDKVERSION}-armv7s.sdk/lib/libcrypto.a ${DERIVED_FILE_DIR}/bin/iPhoneOS${SDKVERSION}-arm64.sdk/lib/libcrypto.a -output ${BUILD_ROOT}/${PRODUCT_NAME}/libcrypto.a
 
-cp -r ${CURRENTPATH}/lib ${BUILD_ROOT}
-
-mkdir -p ${CURRENTPATH}/include
-cp -R ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/include/openssl ${CURRENTPATH}/include/
+mkdir -p ${BUILD_ROOT}/${PRODUCT_NAME}/include
+cp -R ${DERIVED_FILE_DIR}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/include/openssl ${BUILD_ROOT}/${PRODUCT_NAME}/include/
 
 echo "Building done."
-echo "Cleaning up..."
-rm -rf ${CURRENTPATH}/src
-rm -rf ${CURRENTPATH}/bin
-echo "Done."
