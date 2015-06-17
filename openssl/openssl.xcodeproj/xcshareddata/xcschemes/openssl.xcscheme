@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "606240FB1B2F590B00C55FD8"
+               BlueprintIdentifier = "60674AE21B30A93900A1917D"
                BuildableName = "openssl.framework"
                BlueprintName = "openssl"
-               ReferencedContainer = "container:CMSSupport.xcodeproj">
+               ReferencedContainer = "container:openssl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "606241051B2F590B00C55FD8"
+               BlueprintIdentifier = "60674AED1B30A93900A1917D"
                BuildableName = "opensslTests.xctest"
                BlueprintName = "opensslTests"
-               ReferencedContainer = "container:CMSSupport.xcodeproj">
+               ReferencedContainer = "container:openssl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "606241051B2F590B00C55FD8"
+               BlueprintIdentifier = "60674AED1B30A93900A1917D"
                BuildableName = "opensslTests.xctest"
                BlueprintName = "opensslTests"
-               ReferencedContainer = "container:CMSSupport.xcodeproj">
+               ReferencedContainer = "container:openssl.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "606240FB1B2F590B00C55FD8"
+            BlueprintIdentifier = "60674AE21B30A93900A1917D"
             BuildableName = "openssl.framework"
             BlueprintName = "openssl"
-            ReferencedContainer = "container:CMSSupport.xcodeproj">
+            ReferencedContainer = "container:openssl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -75,10 +75,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "606240FB1B2F590B00C55FD8"
+            BlueprintIdentifier = "60674AE21B30A93900A1917D"
             BuildableName = "openssl.framework"
             BlueprintName = "openssl"
-            ReferencedContainer = "container:CMSSupport.xcodeproj">
+            ReferencedContainer = "container:openssl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -93,10 +93,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "606240FB1B2F590B00C55FD8"
+            BlueprintIdentifier = "60674AE21B30A93900A1917D"
             BuildableName = "openssl.framework"
             BlueprintName = "openssl"
-            ReferencedContainer = "container:CMSSupport.xcodeproj">
+            ReferencedContainer = "container:openssl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

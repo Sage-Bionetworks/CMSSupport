@@ -35,13 +35,13 @@ SDKVERSION=`xcrun -sdk iphoneos --show-sdk-version`						  #
 
 
 CURRENTPATH=`pwd`
-#if [ ${CONFIGURATION} == Release ] ; then
-#    echo "Release build--excluding Simulator binaries"
-#    ARCHS="armv7 armv7s arm64"
-#else
-#    echo "Debug build--including Simulator binaries"
-#    ARCHS="i386 x86_64 armv7 armv7s arm64"
-#fi
+if [ ${CONFIGURATION} == Release ] ; then
+    echo "Release build--excluding Simulator binaries"
+    ARCHS="armv7 armv7s arm64"
+else
+    echo "Debug build--including Simulator binaries"
+    ARCHS="i386 x86_64 armv7 armv7s arm64"
+fi
 
 DEVELOPER=`xcode-select -print-path`
 
@@ -61,12 +61,16 @@ case $DEVELOPER in
           ;;
 esac
 
-case $CURRENTPATH in  
-     *\ * )
-           echo "Your path contains whitespaces, which is not supported by 'make install'."
-           exit 1
-          ;;
-esac
+#case $CURRENTPATH in  
+#     *\ * )
+#           echo "Your path contains whitespaces, which is not supported by 'make install'."
+#           exit 1
+#          ;;
+#esac
+
+OUT_DIR="${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}"
+echo "Built products output directory: ${OUT_DIR}"
+mkdir -p "${OUT_DIR}"
 
 set -e
 if [ ! -e openssl-${VERSION}.tar.gz ]; then
@@ -74,17 +78,20 @@ if [ ! -e openssl-${VERSION}.tar.gz ]; then
     curl -O https://www.openssl.org/source/openssl-${VERSION}.tar.gz
 else
 	echo "Using openssl-${VERSION}.tar.gz"
+    if [ "${OUT_DIR}/libssl.a" -nt "openssl-${VERSION}.tar.gz" ]; then
+        echo "Output files newer than input files, skipping"
+        exit 0
+    fi
 fi
 
-mkdir -p "${CURRENTPATH}/src"
-mkdir -p "${CURRENTPATH}/bin"
-mkdir -p "${CURRENTPATH}/lib"
+mkdir -p "${DERIVED_FILE_DIR}/src"
+mkdir -p "${DERIVED_FILE_DIR}/bin"
+mkdir -p "${DERIVED_FILE_DIR}/lib"
 
-tar zxf openssl-${VERSION}.tar.gz -C "${CURRENTPATH}/src"
-cd "${CURRENTPATH}/src/openssl-${VERSION}"
+tar zxf openssl-${VERSION}.tar.gz -C "${DERIVED_FILE_DIR}/src"
+cd "${DERIVED_FILE_DIR}/src/openssl-${VERSION}"
 
 echo "Building openssl-${VERSION} for ${ARCHS}"
-OUT_DIR="${BUILD_ROOT}/${PRODUCT_NAME}"
 for ARCH in ${ARCHS}
 do
 	if [[ "${ARCH}" == "i386" || "${ARCH}" == "x86_64" ]];
@@ -143,23 +150,26 @@ do
 
     echo "Adding results to libraries..."
     IN_LIB_DIR="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/lib"
-    if [ ! -e ${OUT_DIR}/libssl.a ]; then
+    if [ -e ${OUT_DIR}/libssl.a ]; then
         lipo -create ${IN_LIB_DIR}/libssl.a ${OUT_DIR}/libssl.a -output ${OUT_DIR}/libssl.a
-    elif
+    else
         lipo -create ${IN_LIB_DIR}/libssl.a -output ${OUT_DIR}/libssl.a
     fi
-    if [ ! -e ${OUT_DIR}/libcrypto.a ]; then
+    if [ -e ${OUT_DIR}/libcrypto.a ]; then
         lipo -create ${IN_LIB_DIR}/libcrypto.a ${OUT_DIR}/libcrypto.a -output ${OUT_DIR}/libcrypto.a
-    elif
+    else
         lipo -create ${IN_LIB_DIR}/libcrypto.a -output ${OUT_DIR}/libcrypto.a
     fi
 
 done
 
 mkdir -p ${OUT_DIR}/include
-cp -R ${DERIVED_FILE_DIR}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/include/openssl ${OUT_DIR}/include/
+if [[ "${ARCH}" == "i386" || "${ARCH}" == "x86_64" ]];
+then
+PLATFORM="iPhoneSimulator"
+else
+PLATFORM="iPhoneOS"
+fi
+cp -R ${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/include/openssl ${OUT_DIR}/include/
 
 echo "Building done."
-echo "Cleaning up..."
-rm -rf ${CURRENTPATH}/src
-echo "Done."

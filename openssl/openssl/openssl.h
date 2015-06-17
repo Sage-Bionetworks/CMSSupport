@@ -16,4 +16,6 @@ FOUNDATION_EXPORT const unsigned char opensslVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <openssl/PublicHeader.h>
 
-
+#import <openssl/pem.h>
+#import <openssl/cms.h>
+#import <openssl/err.h>

@@ -6,25 +6,11 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		601E8A8A1B2B5C8500BB02FB /* libssl */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 601E8A8B1B2B5C8500BB02FB /* Build configuration list for PBXAggregateTarget "libssl" */;
-			buildPhases = (
-				601E8A911B2B5CBA00BB02FB /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = libssl;
-			productName = libssl;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		601E8A481B2B58F000BB02FB /* CMSSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 601E8A471B2B58F000BB02FB /* CMSSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		601E8A4E1B2B58F000BB02FB /* CMSSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601E8A421B2B58F000BB02FB /* CMSSupport.framework */; };
 		601E8A551B2B58F100BB02FB /* CMSSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 601E8A541B2B58F100BB02FB /* CMSSupportTests.m */; };
-		606240F41B2F46AD00C55FD8 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606240F31B2F46AD00C55FD8 /* openssl.framework */; };
+		806F24241B31110F00B50664 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806F241B1B3110E000B50664 /* openssl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +21,27 @@
 			remoteGlobalIDString = 601E8A411B2B58F000BB02FB;
 			remoteInfo = CMSSupport;
 		};
+		806F241A1B3110E000B50664 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 806F24141B3110E000B50664 /* openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 60674AE31B30A93900A1917D;
+			remoteInfo = openssl;
+		};
+		806F241C1B3110E000B50664 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 806F24141B3110E000B50664 /* openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 60674AEE1B30A93900A1917D;
+			remoteInfo = opensslTests;
+		};
+		806F241F1B3110FF00B50664 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 806F24141B3110E000B50664 /* openssl.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 60674AE21B30A93900A1917D;
+			remoteInfo = openssl;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -44,12 +51,7 @@
 		601E8A4D1B2B58F000BB02FB /* CMSSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMSSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		601E8A531B2B58F100BB02FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		601E8A541B2B58F100BB02FB /* CMSSupportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMSSupportTests.m; sourceTree = "<group>"; };
-		606240F31B2F46AD00C55FD8 /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = openssl.framework; sourceTree = "<group>"; };
-		606240FF1B2F590B00C55FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		606241001B2F590B00C55FD8 /* openssl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = openssl.h; sourceTree = "<group>"; };
-		6062410C1B2F590B00C55FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6062410D1B2F590B00C55FD8 /* opensslTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = opensslTests.m; sourceTree = "<group>"; };
-		60674AD21B30A6F300A1917D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		806F24141B3110E000B50664 /* openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openssl.xcodeproj; path = openssl/openssl.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				606240F41B2F46AD00C55FD8 /* openssl.framework in Frameworks */,
+				806F24241B31110F00B50664 /* openssl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +79,6 @@
 			children = (
 				601E8A441B2B58F000BB02FB /* CMSSupport */,
 				601E8A511B2B58F100BB02FB /* CMSSupportTests */,
-				606240FD1B2F590B00C55FD8 /* openssl */,
-				6062410A1B2F590B00C55FD8 /* opensslTests */,
-				60674AC31B30A6F300A1917D /* openssl-libs */,
-				60674AD01B30A6F300A1917D /* openssl-libsTests */,
 				601E8A671B2B59FD00BB02FB /* Frameworks */,
 				601E8A431B2B58F000BB02FB /* Products */,
 			);
@@ -132,66 +130,18 @@
 		601E8A671B2B59FD00BB02FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				606240F31B2F46AD00C55FD8 /* openssl.framework */,
+				806F24141B3110E000B50664 /* openssl.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		606240FD1B2F590B00C55FD8 /* openssl */ = {
+		806F24151B3110E000B50664 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				606241001B2F590B00C55FD8 /* openssl.h */,
-				606240FE1B2F590B00C55FD8 /* Supporting Files */,
+				806F241B1B3110E000B50664 /* openssl.framework */,
+				806F241D1B3110E000B50664 /* opensslTests.xctest */,
 			);
-			path = openssl;
-			sourceTree = "<group>";
-		};
-		606240FE1B2F590B00C55FD8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				606240FF1B2F590B00C55FD8 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6062410A1B2F590B00C55FD8 /* opensslTests */ = {
-			isa = PBXGroup;
-			children = (
-				6062410D1B2F590B00C55FD8 /* opensslTests.m */,
-				6062410B1B2F590B00C55FD8 /* Supporting Files */,
-			);
-			path = opensslTests;
-			sourceTree = "<group>";
-		};
-		6062410B1B2F590B00C55FD8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6062410C1B2F590B00C55FD8 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		60674AC31B30A6F300A1917D /* openssl-libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "openssl-libs";
-			sourceTree = "<group>";
-		};
-		60674AD01B30A6F300A1917D /* openssl-libsTests */ = {
-			isa = PBXGroup;
-			children = (
-				60674AD11B30A6F300A1917D /* Supporting Files */,
-			);
-			path = "openssl-libsTests";
-			sourceTree = "<group>";
-		};
-		60674AD11B30A6F300A1917D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				60674AD21B30A6F300A1917D /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +170,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				806F24201B3110FF00B50664 /* PBXTargetDependency */,
 			);
 			name = CMSSupport;
 			productName = CMSSupport;
@@ -259,9 +210,6 @@
 					601E8A4C1B2B58F000BB02FB = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
-					601E8A8A1B2B5C8500BB02FB = {
-						CreatedOnToolsVersion = 6.3.2;
-					};
 				};
 			};
 			buildConfigurationList = 601E8A3C1B2B58F000BB02FB /* Build configuration list for PBXProject "CMSSupport" */;
@@ -274,14 +222,36 @@
 			mainGroup = 601E8A381B2B58F000BB02FB;
 			productRefGroup = 601E8A431B2B58F000BB02FB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 806F24151B3110E000B50664 /* Products */;
+					ProjectRef = 806F24141B3110E000B50664 /* openssl.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				601E8A411B2B58F000BB02FB /* CMSSupport */,
 				601E8A4C1B2B58F000BB02FB /* CMSSupportTests */,
-				601E8A8A1B2B5C8500BB02FB /* libssl */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		806F241B1B3110E000B50664 /* openssl.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = openssl.framework;
+			remoteRef = 806F241A1B3110E000B50664 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		806F241D1B3110E000B50664 /* opensslTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = opensslTests.xctest;
+			remoteRef = 806F241C1B3110E000B50664 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		601E8A401B2B58F000BB02FB /* Resources */ = {
@@ -299,24 +269,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		601E8A911B2B5CBA00BB02FB /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/openssl-$(VERSION).tar.gz",
-			);
-			outputPaths = (
-				"$(BUILD_ROOT)/$(PRODUCT_NAME)",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export COMMAND_MODE=unix2003\nexport VERSION=\"1.0.2c\"\n./build-libssl.sh";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		601E8A3D1B2B58F000BB02FB /* Sources */ = {
@@ -341,6 +293,11 @@
 			isa = PBXTargetDependency;
 			target = 601E8A411B2B58F000BB02FB /* CMSSupport */;
 			targetProxy = 601E8A4F1B2B58F000BB02FB /* PBXContainerItemProxy */;
+		};
+		806F24201B3110FF00B50664 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = openssl;
+			targetProxy = 806F241F1B3110FF00B50664 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -503,20 +460,6 @@
 			};
 			name = Release;
 		};
-		601E8A8C1B2B5C8500BB02FB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		601E8A8D1B2B5C8500BB02FB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -543,15 +486,6 @@
 			buildConfigurations = (
 				601E8A5C1B2B58F100BB02FB /* Debug */,
 				601E8A5D1B2B58F100BB02FB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		601E8A8B1B2B5C8500BB02FB /* Build configuration list for PBXAggregateTarget "libssl" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				601E8A8C1B2B5C8500BB02FB /* Debug */,
-				601E8A8D1B2B5C8500BB02FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
