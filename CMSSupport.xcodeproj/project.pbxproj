@@ -10,7 +10,9 @@
 		601E8A481B2B58F000BB02FB /* CMSSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 601E8A471B2B58F000BB02FB /* CMSSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		601E8A4E1B2B58F000BB02FB /* CMSSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601E8A421B2B58F000BB02FB /* CMSSupport.framework */; };
 		601E8A551B2B58F100BB02FB /* CMSSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 601E8A541B2B58F100BB02FB /* CMSSupportTests.m */; };
-		806F24241B31110F00B50664 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806F241B1B3110E000B50664 /* openssl.framework */; };
+		60EBFE5A1B32179F0037876A /* APCCMSSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 60EBFE581B32179F0037876A /* APCCMSSupport.h */; };
+		60EBFE5B1B32179F0037876A /* APCCMSSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBFE591B32179F0037876A /* APCCMSSupport.m */; };
+		60EBFE621B3230930037876A /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806F241B1B3110E000B50664 /* openssl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		601E8A4D1B2B58F000BB02FB /* CMSSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMSSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		601E8A531B2B58F100BB02FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		601E8A541B2B58F100BB02FB /* CMSSupportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMSSupportTests.m; sourceTree = "<group>"; };
+		60EBFE581B32179F0037876A /* APCCMSSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCCMSSupport.h; sourceTree = "<group>"; };
+		60EBFE591B32179F0037876A /* APCCMSSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCCMSSupport.m; sourceTree = "<group>"; };
 		806F24141B3110E000B50664 /* openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openssl.xcodeproj; path = openssl/openssl.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				806F24241B31110F00B50664 /* openssl.framework in Frameworks */,
+				60EBFE621B3230930037876A /* openssl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				601E8A471B2B58F000BB02FB /* CMSSupport.h */,
+				60EBFE581B32179F0037876A /* APCCMSSupport.h */,
+				60EBFE591B32179F0037876A /* APCCMSSupport.m */,
 				601E8A451B2B58F000BB02FB /* Supporting Files */,
 			);
 			path = CMSSupport;
@@ -152,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				601E8A481B2B58F000BB02FB /* CMSSupport.h in Headers */,
+				60EBFE5A1B32179F0037876A /* APCCMSSupport.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60EBFE5B1B32179F0037876A /* APCCMSSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -380,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,9 +409,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(BUILT_PRODUCTS_DIR)/openssl.framework/Headers/**",
+				);
 				INFOPLIST_FILE = CMSSupport/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -421,9 +433,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(BUILT_PRODUCTS_DIR)/openssl.framework/Headers/**",
+				);
 				INFOPLIST_FILE = CMSSupport/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
