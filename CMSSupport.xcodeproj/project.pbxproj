@@ -169,6 +169,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 601E8A581B2B58F100BB02FB /* Build configuration list for PBXNativeTarget "CMSSupport" */;
 			buildPhases = (
+				806F24311B33838500B50664 /* ShellScript */,
 				601E8A3D1B2B58F000BB02FB /* Sources */,
 				601E8A3E1B2B58F000BB02FB /* Frameworks */,
 				601E8A3F1B2B58F000BB02FB /* Headers */,
@@ -276,6 +277,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		806F24311B33838500B50664 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ${PROJECT_DIR}/CMSSupport\n\n# TODO: Point this at ResearchKit/AppCore/master when the file is there\ncurl -O https://raw.githubusercontent.com/Erin-Mounts/AppCore/CMSSupport-refactor/APCAppCore/APCAppCore/Library/CMS/APCCMSSupport.h";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		601E8A3D1B2B58F000BB02FB /* Sources */ = {
@@ -410,6 +427,7 @@
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/AppCore.framework/Headers/**",
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(BUILT_PRODUCTS_DIR)/openssl.framework/Headers/**",
@@ -434,6 +452,7 @@
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/AppCore.framework/Headers/**",
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(BUILT_PRODUCTS_DIR)/openssl.framework/Headers/**",
