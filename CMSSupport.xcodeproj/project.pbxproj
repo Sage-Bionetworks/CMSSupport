@@ -290,7 +290,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ${PROJECT_DIR}/CMSSupport\n\n# TODO: Point this at ResearchKit/AppCore/master when the file is there\ncurl -O https://raw.githubusercontent.com/Erin-Mounts/AppCore/CMSSupport-refactor/APCAppCore/APCAppCore/Library/CMS/APCCMSSupport.h";
+			shellScript = "cd ${PROJECT_DIR}/CMSSupport\n\ncurl -O https://raw.githubusercontent.com/ResearchKit/AppCore/master/APCAppCore/APCAppCore/Library/CMS/APCCMSSupport.h";
 		};
 /* End PBXShellScriptBuildPhase section */
 
