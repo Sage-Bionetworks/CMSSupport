@@ -1,18 +1,3 @@
-# CMSSupport
-
-This project builds a drop-in framework you can link into your app alongside AppCore, thus enabling it to
-apply Bridge-compatible CMS encryption to sensitive data files while they reside on the device awaiting
-upload, and during the upload process.
-
-You can either build the framework target of CMSSupport, copy it to your app's project folder, and link to it
-as a standalone framework; or add CMSSupport as a subproject of your app's project, and link to its framework
-target's product.
-
-You will also need to supply an X.509 public encryption key (.pem) file, whose name is your Bridge study name
-with the .pem extension, in your app's resources.
-
-## License
-
 CMSSupport is available under the BSD license:
 
 	Copyright (c) 2015, Sage Bionetworks
