@@ -290,7 +290,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ${PROJECT_DIR}/CMSSupport\n\ncurl -O https://raw.githubusercontent.com/ResearchKit/AppCore/master/APCAppCore/APCAppCore/Library/CMS/APCCMSSupport.h";
+			shellScript = "cd ${PROJECT_DIR}/CMSSupport\n\ncurl -f -O https://raw.githubusercontent.com/ResearchKit/AppCore/master/APCAppCore/APCAppCore/Library/CMS/APCCMSSupport.h\n\nif [ $? -eq 22 ]; then\n    echo \"warning: Could not download latest APCCMSSupport.h from GitHub\"\nelse\n    exit $?\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
