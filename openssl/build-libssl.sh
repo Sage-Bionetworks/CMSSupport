@@ -38,6 +38,14 @@ else
     echo "No bitcode flag"
 fi
 
+if [ ${ACTION} == install ] ; then
+    echo "Archive build--excluding Simulator binaries"
+    ARCHS="armv7 armv7s arm64"
+else
+    echo "Dev build--including Simulator binaries"
+    ARCHS="i386 x86_64 armv7 armv7s arm64"
+fi
+
 #																		  #
 ###########################################################################
 #																		  #
@@ -47,13 +55,6 @@ fi
 
 
 CURRENTPATH=`pwd`
-if [ ${CONFIGURATION} == Release ] ; then
-    echo "Release build--excluding Simulator binaries"
-    ARCHS="armv7 armv7s arm64"
-else
-    echo "Debug build--including Simulator binaries"
-    ARCHS="i386 x86_64 armv7 armv7s arm64"
-fi
 
 DEVELOPER=`xcode-select -print-path`
 
@@ -144,7 +145,7 @@ do
 	# add -isysroot to CC=
 	sed -ie "s!^CFLAG=!CFLAG=-isysroot ${CROSS_TOP}/SDKs/${CROSS_SDK} -miphoneos-version-min=7.0${BITCODE_FLAG} !" "Makefile"
 
-    echo `grep ^CFLAG= Makefile`
+#    echo `grep ^CFLAG= Makefile`
 
 	if [ "$1" == "verbose" ];
 	then
