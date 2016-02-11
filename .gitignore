@@ -1,2 +1,4 @@
 .DS_Store
 CMSSupport.xccheckout
+CMSSupport.xcodeproj/xcuserdata/*.xcuserdatad
+*.xcuserdatad
