@@ -25,7 +25,7 @@
 #  Change values here													  #
 #                                                                         #
 #VERSION="1.0.2c"													      #
-SDKVERSION=`xcrun -sdk iphoneos --show-sdk-version`						  #
+SDKVERSION=`xcrun -sdk iphoneos --show-sdk-version`
 if [[ "${ENABLE_BITCODE}" == "YES" ]]; then
     if [[ "${BITCODE_GENERATION_MODE}" == "bitcode" ]]; then
         BITCODE_FLAG=" -fembed-bitcode"

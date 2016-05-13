@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0B6D8AAAD0FF4C01212E6AB2D110619FA685281D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0B6D8AAAD0FF4C01212E6AB2D110619FA685281D" : 0,
+    "B8291B2279B07F973FECD69C5EEE3C81B0A98D83" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "623B15AC-AF8B-47A0-BA1E-3645163B6A88",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0B6D8AAAD0FF4C01212E6AB2D110619FA685281D" : "CMSSupport\/",
+    "B8291B2279B07F973FECD69C5EEE3C81B0A98D83" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CMSSupport",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CMSSupport.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Sage-Bionetworks\/CMSSupport.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0B6D8AAAD0FF4C01212E6AB2D110619FA685281D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Sage-Bionetworks\/Lilly.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B8291B2279B07F973FECD69C5EEE3C81B0A98D83"
+    }
+  ]
+}
