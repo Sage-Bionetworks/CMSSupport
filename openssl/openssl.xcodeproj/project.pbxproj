@@ -12,6 +12,7 @@
 			buildConfigurationList = 60674B001B30A96E00A1917D /* Build configuration list for PBXAggregateTarget "libssl" */;
 			buildPhases = (
 				60674B031B30A98600A1917D /* ShellScript */,
+				80B2C4AC1E3AADBA001F9FEA /* CopyFiles */,
 			);
 			dependencies = (
 			);
@@ -101,6 +102,84 @@
 		80A9C21F1B30F0BC0058A3B0 /* x509v3.h in Headers */ = {isa = PBXBuildFile; fileRef = 80A9C1D41B30F0BC0058A3B0 /* x509v3.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		80A9C2221B30F1050058A3B0 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A9C2201B30F1050058A3B0 /* libcrypto.a */; };
 		80A9C2231B30F1050058A3B0 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A9C2211B30F1050058A3B0 /* libssl.a */; };
+		80B2C4AE1E3AB4A0001F9FEA /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A9C2201B30F1050058A3B0 /* libcrypto.a */; };
+		80B2C4AF1E3AB4A0001F9FEA /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A9C2211B30F1050058A3B0 /* libssl.a */; };
+		80B2C59B1E3AC2E6001F9FEA /* aes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C18A1B30F0BC0058A3B0 /* aes.h */; };
+		80B2C59C1E3AC2E6001F9FEA /* asn1.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C18B1B30F0BC0058A3B0 /* asn1.h */; };
+		80B2C59D1E3AC2E6001F9FEA /* asn1_mac.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C18C1B30F0BC0058A3B0 /* asn1_mac.h */; };
+		80B2C59E1E3AC2E6001F9FEA /* asn1t.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C18D1B30F0BC0058A3B0 /* asn1t.h */; };
+		80B2C59F1E3AC2E6001F9FEA /* bio.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C18E1B30F0BC0058A3B0 /* bio.h */; };
+		80B2C5A01E3AC2E6001F9FEA /* blowfish.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C18F1B30F0BC0058A3B0 /* blowfish.h */; };
+		80B2C5A11E3AC2E6001F9FEA /* bn.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1901B30F0BC0058A3B0 /* bn.h */; };
+		80B2C5A21E3AC2E6001F9FEA /* buffer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1911B30F0BC0058A3B0 /* buffer.h */; };
+		80B2C5A31E3AC2E6001F9FEA /* camellia.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1921B30F0BC0058A3B0 /* camellia.h */; };
+		80B2C5A41E3AC2E6001F9FEA /* cast.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1931B30F0BC0058A3B0 /* cast.h */; };
+		80B2C5A51E3AC2E6001F9FEA /* cmac.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1941B30F0BC0058A3B0 /* cmac.h */; };
+		80B2C5A61E3AC2E6001F9FEA /* cms.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1951B30F0BC0058A3B0 /* cms.h */; };
+		80B2C5A71E3AC2E6001F9FEA /* comp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1961B30F0BC0058A3B0 /* comp.h */; };
+		80B2C5A81E3AC2E6001F9FEA /* conf.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1971B30F0BC0058A3B0 /* conf.h */; };
+		80B2C5A91E3AC2E6001F9FEA /* conf_api.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1981B30F0BC0058A3B0 /* conf_api.h */; };
+		80B2C5AA1E3AC2E6001F9FEA /* crypto.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1991B30F0BC0058A3B0 /* crypto.h */; };
+		80B2C5AB1E3AC2E6001F9FEA /* des.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C19A1B30F0BC0058A3B0 /* des.h */; };
+		80B2C5AC1E3AC2E6001F9FEA /* des_old.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C19B1B30F0BC0058A3B0 /* des_old.h */; };
+		80B2C5AD1E3AC2E6001F9FEA /* dh.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C19C1B30F0BC0058A3B0 /* dh.h */; };
+		80B2C5AE1E3AC2E6001F9FEA /* dsa.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C19D1B30F0BC0058A3B0 /* dsa.h */; };
+		80B2C5AF1E3AC2E6001F9FEA /* dso.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C19E1B30F0BC0058A3B0 /* dso.h */; };
+		80B2C5B01E3AC2E6001F9FEA /* dtls1.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C19F1B30F0BC0058A3B0 /* dtls1.h */; };
+		80B2C5B11E3AC2E6001F9FEA /* e_os2.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1A01B30F0BC0058A3B0 /* e_os2.h */; };
+		80B2C5B21E3AC2E6001F9FEA /* ebcdic.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1A11B30F0BC0058A3B0 /* ebcdic.h */; };
+		80B2C5B31E3AC2E6001F9FEA /* ec.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1A21B30F0BC0058A3B0 /* ec.h */; };
+		80B2C5B41E3AC2E6001F9FEA /* ecdh.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1A31B30F0BC0058A3B0 /* ecdh.h */; };
+		80B2C5B51E3AC2E6001F9FEA /* ecdsa.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1A41B30F0BC0058A3B0 /* ecdsa.h */; };
+		80B2C5B61E3AC2E6001F9FEA /* engine.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1A51B30F0BC0058A3B0 /* engine.h */; };
+		80B2C5B71E3AC2E6001F9FEA /* err.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1A61B30F0BC0058A3B0 /* err.h */; };
+		80B2C5B81E3AC2E6001F9FEA /* evp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1A71B30F0BC0058A3B0 /* evp.h */; };
+		80B2C5B91E3AC2E6001F9FEA /* hmac.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1A81B30F0BC0058A3B0 /* hmac.h */; };
+		80B2C5BA1E3AC2E6001F9FEA /* idea.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1A91B30F0BC0058A3B0 /* idea.h */; };
+		80B2C5BB1E3AC2E6001F9FEA /* krb5_asn.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1AA1B30F0BC0058A3B0 /* krb5_asn.h */; };
+		80B2C5BC1E3AC2E6001F9FEA /* kssl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1AB1B30F0BC0058A3B0 /* kssl.h */; };
+		80B2C5BD1E3AC2E6001F9FEA /* lhash.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1AC1B30F0BC0058A3B0 /* lhash.h */; };
+		80B2C5BE1E3AC2E6001F9FEA /* md4.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1AD1B30F0BC0058A3B0 /* md4.h */; };
+		80B2C5BF1E3AC2E6001F9FEA /* md5.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1AE1B30F0BC0058A3B0 /* md5.h */; };
+		80B2C5C01E3AC2E6001F9FEA /* mdc2.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1AF1B30F0BC0058A3B0 /* mdc2.h */; };
+		80B2C5C11E3AC2E6001F9FEA /* modes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1B01B30F0BC0058A3B0 /* modes.h */; };
+		80B2C5C21E3AC2E6001F9FEA /* obj_mac.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1B11B30F0BC0058A3B0 /* obj_mac.h */; };
+		80B2C5C31E3AC2E6001F9FEA /* objects.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1B21B30F0BC0058A3B0 /* objects.h */; };
+		80B2C5C41E3AC2E6001F9FEA /* ocsp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1B31B30F0BC0058A3B0 /* ocsp.h */; };
+		80B2C5C51E3AC2E6001F9FEA /* opensslconf.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1B41B30F0BC0058A3B0 /* opensslconf.h */; };
+		80B2C5C61E3AC2E6001F9FEA /* opensslv.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1B51B30F0BC0058A3B0 /* opensslv.h */; };
+		80B2C5C71E3AC2E6001F9FEA /* ossl_typ.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1B61B30F0BC0058A3B0 /* ossl_typ.h */; };
+		80B2C5C81E3AC2E6001F9FEA /* pem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1B71B30F0BC0058A3B0 /* pem.h */; };
+		80B2C5C91E3AC2E6001F9FEA /* pem2.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1B81B30F0BC0058A3B0 /* pem2.h */; };
+		80B2C5CA1E3AC2E6001F9FEA /* pkcs12.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1B91B30F0BC0058A3B0 /* pkcs12.h */; };
+		80B2C5CB1E3AC2E6001F9FEA /* pkcs7.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1BA1B30F0BC0058A3B0 /* pkcs7.h */; };
+		80B2C5CC1E3AC2E6001F9FEA /* pqueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1BB1B30F0BC0058A3B0 /* pqueue.h */; };
+		80B2C5CD1E3AC2E6001F9FEA /* rand.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1BC1B30F0BC0058A3B0 /* rand.h */; };
+		80B2C5CE1E3AC2E6001F9FEA /* rc2.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1BD1B30F0BC0058A3B0 /* rc2.h */; };
+		80B2C5CF1E3AC2E6001F9FEA /* rc4.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1BE1B30F0BC0058A3B0 /* rc4.h */; };
+		80B2C5D01E3AC2E6001F9FEA /* ripemd.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1BF1B30F0BC0058A3B0 /* ripemd.h */; };
+		80B2C5D11E3AC2E6001F9FEA /* rsa.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1C01B30F0BC0058A3B0 /* rsa.h */; };
+		80B2C5D21E3AC2E6001F9FEA /* safestack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1C11B30F0BC0058A3B0 /* safestack.h */; };
+		80B2C5D31E3AC2E6001F9FEA /* seed.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1C21B30F0BC0058A3B0 /* seed.h */; };
+		80B2C5D41E3AC2E6001F9FEA /* sha.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1C31B30F0BC0058A3B0 /* sha.h */; };
+		80B2C5D51E3AC2E6001F9FEA /* srp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1C41B30F0BC0058A3B0 /* srp.h */; };
+		80B2C5D61E3AC2E6001F9FEA /* srtp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1C51B30F0BC0058A3B0 /* srtp.h */; };
+		80B2C5D71E3AC2E6001F9FEA /* ssl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1C61B30F0BC0058A3B0 /* ssl.h */; };
+		80B2C5D81E3AC2E6001F9FEA /* ssl2.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1C71B30F0BC0058A3B0 /* ssl2.h */; };
+		80B2C5D91E3AC2E6001F9FEA /* ssl23.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1C81B30F0BC0058A3B0 /* ssl23.h */; };
+		80B2C5DA1E3AC2E6001F9FEA /* ssl3.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1C91B30F0BC0058A3B0 /* ssl3.h */; };
+		80B2C5DB1E3AC2E6001F9FEA /* stack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1CA1B30F0BC0058A3B0 /* stack.h */; };
+		80B2C5DC1E3AC2E6001F9FEA /* symhacks.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1CB1B30F0BC0058A3B0 /* symhacks.h */; };
+		80B2C5DD1E3AC2E6001F9FEA /* tls1.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1CC1B30F0BC0058A3B0 /* tls1.h */; };
+		80B2C5DE1E3AC2E6001F9FEA /* ts.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1CD1B30F0BC0058A3B0 /* ts.h */; };
+		80B2C5DF1E3AC2E6001F9FEA /* txt_db.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1CE1B30F0BC0058A3B0 /* txt_db.h */; };
+		80B2C5E01E3AC2E6001F9FEA /* ui.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1CF1B30F0BC0058A3B0 /* ui.h */; };
+		80B2C5E11E3AC2E6001F9FEA /* ui_compat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1D01B30F0BC0058A3B0 /* ui_compat.h */; };
+		80B2C5E21E3AC2E6001F9FEA /* whrlpool.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1D11B30F0BC0058A3B0 /* whrlpool.h */; };
+		80B2C5E31E3AC2E6001F9FEA /* x509.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1D21B30F0BC0058A3B0 /* x509.h */; };
+		80B2C5E41E3AC2E6001F9FEA /* x509_vfy.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1D31B30F0BC0058A3B0 /* x509_vfy.h */; };
+		80B2C5E51E3AC2E6001F9FEA /* x509v3.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80A9C1D41B30F0BC0058A3B0 /* x509v3.h */; };
+		80B2C5E61E3AC2EB001F9FEA /* openssl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 60674AE81B30A93900A1917D /* openssl.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +197,111 @@
 			remoteGlobalIDString = 60674AFF1B30A96E00A1917D;
 			remoteInfo = libssl;
 		};
+		80B2C4AA1E3AAC66001F9FEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60674ADA1B30A93900A1917D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60674AFF1B30A96E00A1917D;
+			remoteInfo = libssl;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		80B2C49F1E3AAC25001F9FEA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				80B2C5E61E3AC2EB001F9FEA /* openssl.h in CopyFiles */,
+				80B2C59B1E3AC2E6001F9FEA /* aes.h in CopyFiles */,
+				80B2C59C1E3AC2E6001F9FEA /* asn1.h in CopyFiles */,
+				80B2C59D1E3AC2E6001F9FEA /* asn1_mac.h in CopyFiles */,
+				80B2C59E1E3AC2E6001F9FEA /* asn1t.h in CopyFiles */,
+				80B2C59F1E3AC2E6001F9FEA /* bio.h in CopyFiles */,
+				80B2C5A01E3AC2E6001F9FEA /* blowfish.h in CopyFiles */,
+				80B2C5A11E3AC2E6001F9FEA /* bn.h in CopyFiles */,
+				80B2C5A21E3AC2E6001F9FEA /* buffer.h in CopyFiles */,
+				80B2C5A31E3AC2E6001F9FEA /* camellia.h in CopyFiles */,
+				80B2C5A41E3AC2E6001F9FEA /* cast.h in CopyFiles */,
+				80B2C5A51E3AC2E6001F9FEA /* cmac.h in CopyFiles */,
+				80B2C5A61E3AC2E6001F9FEA /* cms.h in CopyFiles */,
+				80B2C5A71E3AC2E6001F9FEA /* comp.h in CopyFiles */,
+				80B2C5A81E3AC2E6001F9FEA /* conf.h in CopyFiles */,
+				80B2C5A91E3AC2E6001F9FEA /* conf_api.h in CopyFiles */,
+				80B2C5AA1E3AC2E6001F9FEA /* crypto.h in CopyFiles */,
+				80B2C5AB1E3AC2E6001F9FEA /* des.h in CopyFiles */,
+				80B2C5AC1E3AC2E6001F9FEA /* des_old.h in CopyFiles */,
+				80B2C5AD1E3AC2E6001F9FEA /* dh.h in CopyFiles */,
+				80B2C5AE1E3AC2E6001F9FEA /* dsa.h in CopyFiles */,
+				80B2C5AF1E3AC2E6001F9FEA /* dso.h in CopyFiles */,
+				80B2C5B01E3AC2E6001F9FEA /* dtls1.h in CopyFiles */,
+				80B2C5B11E3AC2E6001F9FEA /* e_os2.h in CopyFiles */,
+				80B2C5B21E3AC2E6001F9FEA /* ebcdic.h in CopyFiles */,
+				80B2C5B31E3AC2E6001F9FEA /* ec.h in CopyFiles */,
+				80B2C5B41E3AC2E6001F9FEA /* ecdh.h in CopyFiles */,
+				80B2C5B51E3AC2E6001F9FEA /* ecdsa.h in CopyFiles */,
+				80B2C5B61E3AC2E6001F9FEA /* engine.h in CopyFiles */,
+				80B2C5B71E3AC2E6001F9FEA /* err.h in CopyFiles */,
+				80B2C5B81E3AC2E6001F9FEA /* evp.h in CopyFiles */,
+				80B2C5B91E3AC2E6001F9FEA /* hmac.h in CopyFiles */,
+				80B2C5BA1E3AC2E6001F9FEA /* idea.h in CopyFiles */,
+				80B2C5BB1E3AC2E6001F9FEA /* krb5_asn.h in CopyFiles */,
+				80B2C5BC1E3AC2E6001F9FEA /* kssl.h in CopyFiles */,
+				80B2C5BD1E3AC2E6001F9FEA /* lhash.h in CopyFiles */,
+				80B2C5BE1E3AC2E6001F9FEA /* md4.h in CopyFiles */,
+				80B2C5BF1E3AC2E6001F9FEA /* md5.h in CopyFiles */,
+				80B2C5C01E3AC2E6001F9FEA /* mdc2.h in CopyFiles */,
+				80B2C5C11E3AC2E6001F9FEA /* modes.h in CopyFiles */,
+				80B2C5C21E3AC2E6001F9FEA /* obj_mac.h in CopyFiles */,
+				80B2C5C31E3AC2E6001F9FEA /* objects.h in CopyFiles */,
+				80B2C5C41E3AC2E6001F9FEA /* ocsp.h in CopyFiles */,
+				80B2C5C51E3AC2E6001F9FEA /* opensslconf.h in CopyFiles */,
+				80B2C5C61E3AC2E6001F9FEA /* opensslv.h in CopyFiles */,
+				80B2C5C71E3AC2E6001F9FEA /* ossl_typ.h in CopyFiles */,
+				80B2C5C81E3AC2E6001F9FEA /* pem.h in CopyFiles */,
+				80B2C5C91E3AC2E6001F9FEA /* pem2.h in CopyFiles */,
+				80B2C5CA1E3AC2E6001F9FEA /* pkcs12.h in CopyFiles */,
+				80B2C5CB1E3AC2E6001F9FEA /* pkcs7.h in CopyFiles */,
+				80B2C5CC1E3AC2E6001F9FEA /* pqueue.h in CopyFiles */,
+				80B2C5CD1E3AC2E6001F9FEA /* rand.h in CopyFiles */,
+				80B2C5CE1E3AC2E6001F9FEA /* rc2.h in CopyFiles */,
+				80B2C5CF1E3AC2E6001F9FEA /* rc4.h in CopyFiles */,
+				80B2C5D01E3AC2E6001F9FEA /* ripemd.h in CopyFiles */,
+				80B2C5D11E3AC2E6001F9FEA /* rsa.h in CopyFiles */,
+				80B2C5D21E3AC2E6001F9FEA /* safestack.h in CopyFiles */,
+				80B2C5D31E3AC2E6001F9FEA /* seed.h in CopyFiles */,
+				80B2C5D41E3AC2E6001F9FEA /* sha.h in CopyFiles */,
+				80B2C5D51E3AC2E6001F9FEA /* srp.h in CopyFiles */,
+				80B2C5D61E3AC2E6001F9FEA /* srtp.h in CopyFiles */,
+				80B2C5D71E3AC2E6001F9FEA /* ssl.h in CopyFiles */,
+				80B2C5D81E3AC2E6001F9FEA /* ssl2.h in CopyFiles */,
+				80B2C5D91E3AC2E6001F9FEA /* ssl23.h in CopyFiles */,
+				80B2C5DA1E3AC2E6001F9FEA /* ssl3.h in CopyFiles */,
+				80B2C5DB1E3AC2E6001F9FEA /* stack.h in CopyFiles */,
+				80B2C5DC1E3AC2E6001F9FEA /* symhacks.h in CopyFiles */,
+				80B2C5DD1E3AC2E6001F9FEA /* tls1.h in CopyFiles */,
+				80B2C5DE1E3AC2E6001F9FEA /* ts.h in CopyFiles */,
+				80B2C5DF1E3AC2E6001F9FEA /* txt_db.h in CopyFiles */,
+				80B2C5E01E3AC2E6001F9FEA /* ui.h in CopyFiles */,
+				80B2C5E11E3AC2E6001F9FEA /* ui_compat.h in CopyFiles */,
+				80B2C5E21E3AC2E6001F9FEA /* whrlpool.h in CopyFiles */,
+				80B2C5E31E3AC2E6001F9FEA /* x509.h in CopyFiles */,
+				80B2C5E41E3AC2E6001F9FEA /* x509_vfy.h in CopyFiles */,
+				80B2C5E51E3AC2E6001F9FEA /* x509v3.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B2C4AC1E3AADBA001F9FEA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		60674AE31B30A93900A1917D /* openssl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = openssl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +388,8 @@
 		80A9C1D41B30F0BC0058A3B0 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		80A9C2201B30F1050058A3B0 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = libssl/libcrypto.a; sourceTree = "<group>"; };
 		80A9C2211B30F1050058A3B0 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = libssl/libssl.a; sourceTree = "<group>"; };
+		80B2C4A11E3AAC25001F9FEA /* libOpenSSL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpenSSL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B2C5471E3AB528001F9FEA /* openssl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = openssl.h; path = openssl/openssl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,12 +410,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80B2C49E1E3AAC25001F9FEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B2C4AE1E3AB4A0001F9FEA /* libcrypto.a in Frameworks */,
+				80B2C4AF1E3AB4A0001F9FEA /* libssl.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		60674AD91B30A93900A1917D = {
 			isa = PBXGroup;
 			children = (
+				80B2C5471E3AB528001F9FEA /* openssl.h */,
 				80A9C2241B30F1BC0058A3B0 /* libssl */,
 				60674AE51B30A93900A1917D /* openssl */,
 				60674AF21B30A93900A1917D /* opensslTests */,
@@ -243,6 +438,7 @@
 			children = (
 				60674AE31B30A93900A1917D /* openssl.framework */,
 				60674AEE1B30A93900A1917D /* opensslTests.xctest */,
+				80B2C4A11E3AAC25001F9FEA /* libOpenSSL.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -503,6 +699,26 @@
 			productReference = 60674AEE1B30A93900A1917D /* opensslTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		80B2C4A01E3AAC25001F9FEA /* OpenSSL (iOS Static Library) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B2C4A91E3AAC25001F9FEA /* Build configuration list for PBXNativeTarget "OpenSSL (iOS Static Library)" */;
+			buildPhases = (
+				80B2C4AD1E3AAE45001F9FEA /* ShellScript */,
+				80B2C49D1E3AAC25001F9FEA /* Sources */,
+				80B2C49E1E3AAC25001F9FEA /* Frameworks */,
+				80B2C49F1E3AAC25001F9FEA /* CopyFiles */,
+				80B2C5491E3AB541001F9FEA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80B2C4AB1E3AAC66001F9FEA /* PBXTargetDependency */,
+			);
+			name = "OpenSSL (iOS Static Library)";
+			productName = "OpenSSL (iOS Static Library)";
+			productReference = 80B2C4A11E3AAC25001F9FEA /* libOpenSSL.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -521,6 +737,10 @@
 					60674AFF1B30A96E00A1917D = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
+					80B2C4A01E3AAC25001F9FEA = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 60674ADD1B30A93900A1917D /* Build configuration list for PBXProject "openssl" */;
@@ -538,6 +758,7 @@
 				60674AE21B30A93900A1917D /* openssl */,
 				60674AED1B30A93900A1917D /* opensslTests */,
 				60674AFF1B30A96E00A1917D /* libssl */,
+				80B2C4A01E3AAC25001F9FEA /* OpenSSL (iOS Static Library) */,
 			);
 		};
 /* End PBXProject section */
@@ -601,6 +822,32 @@
 			shellPath = /bin/sh;
 			shellScript = "# ok we're done with libssl so get rid of it\nrm -rf libssl";
 		};
+		80B2C4AD1E3AAE45001F9FEA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# clear out any old version\nrm -rf libssl\n# copy appropriate libssl products here\ncp -R \"${BUILT_PRODUCTS_DIR}/libssl\" .\n";
+		};
+		80B2C5491E3AB541001F9FEA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# ok we're done with libssl so get rid of it\nrm -rf libssl";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -619,6 +866,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80B2C49D1E3AAC25001F9FEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -631,6 +885,11 @@
 			isa = PBXTargetDependency;
 			target = 60674AFF1B30A96E00A1917D /* libssl */;
 			targetProxy = 60674B041B30A9CD00A1917D /* PBXContainerItemProxy */;
+		};
+		80B2C4AB1E3AAC66001F9FEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60674AFF1B30A96E00A1917D /* libssl */;
+			targetProxy = 80B2C4AA1E3AAC66001F9FEA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -822,6 +1081,42 @@
 			};
 			name = Release;
 		};
+		80B2C4A71E3AAC25001F9FEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libssl",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-all_load";
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
+				PRODUCT_NAME = OpenSSL;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		80B2C4A81E3AAC25001F9FEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEAD_CODE_STRIPPING = NO;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libssl",
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
+				PRODUCT_NAME = OpenSSL;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -860,6 +1155,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		80B2C4A91E3AAC25001F9FEA /* Build configuration list for PBXNativeTarget "OpenSSL (iOS Static Library)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B2C4A71E3AAC25001F9FEA /* Debug */,
+				80B2C4A81E3AAC25001F9FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
