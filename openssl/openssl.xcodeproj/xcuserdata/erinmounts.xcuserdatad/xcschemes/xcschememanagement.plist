@@ -3,7 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
-	<dict/>
+	<dict>
+		<key>OpenSSL (iOS Static Library).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>24</integer>
+		</dict>
+		<key>libssl.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
+		<key>openssl.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>23</integer>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>60674AE21B30A93900A1917D</key>
@@ -17,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>60674AFF1B30A96E00A1917D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>80B2C4A01E3AAC25001F9FEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
