@@ -26,17 +26,16 @@
 #                                                                         #
 #VERSION="1.0.2c"													      #
 SDKVERSION=`xcrun -sdk iphoneos --show-sdk-version`
-if [[ "${ENABLE_BITCODE}" == "YES" ]]; then
-    if [[ "${BITCODE_GENERATION_MODE}" == "bitcode" ]]; then
-        BITCODE_FLAG=" -fembed-bitcode"
-    else
-        BITCODE_FLAG=" -fembed-bitcode-marker"
-    fi
-    echo "Bitcode flag: ${BITCODE_FLAG}"
+if [[ "${BITCODE_GENERATION_MODE}" == "bitcode" ]]; then
+    BITCODE_FLAG=" -fembed-bitcode"
 else
-    BITCODE_FLAG=""
-    echo "No bitcode flag"
+    if [[ "${BITCODE_GENERATION_MODE}" == "marker" ]]; then
+        BITCODE_FLAG=" -fembed-bitcode-marker"
+    else
+        BITCODE_FLAG=""
+    fi
 fi
+echo "Bitcode flag: '${BITCODE_FLAG}'"
 
 if [ ${ACTION} == install ] ; then
     echo "Archive build--excluding Simulator binaries"
