@@ -795,7 +795,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export COMMAND_MODE=unix2003\nexport VERSION=\"1.0.2c\"\n#env\n./build-libssl.sh";
+			shellScript = "export COMMAND_MODE=unix2003\nexport VERSION=\"1.0.2t\"\n#env\n./build-libssl.sh";
 		};
 		60674B061B30A9E000A1917D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
