@@ -37,12 +37,20 @@ else
 fi
 echo "Bitcode flag: '${BITCODE_FLAG}'"
 
-if [ ${ACTION} == install ] ; then
-    echo "Archive build--excluding Simulator binaries"
-    ARCHS="armv7 armv7s arm64"
+#if [ ${ACTION} == install ] ; then
+#    echo "Archive build--excluding Simulator binaries"
+#    ARCHS="armv7 armv7s arm64"
+#else
+#    echo "Dev build--including Simulator binaries"
+#    ARCHS="i386 x86_64 armv7 armv7s arm64"
+#fi
+
+if [ ${PLATFORM_NAME} == iphonesimulator ] ; then
+    echo "Simulator build--building for Intel only, no Apple Silicon support"
+    ARCHS="i386 x86_64"
 else
-    echo "Dev build--including Simulator binaries"
-    ARCHS="i386 x86_64 armv7 armv7s arm64"
+    echo "iPhoneOS build--building all standard device architectures"
+    ARCHS="${ARCHS_STANDARD}"
 fi
 
 #																		  #
@@ -107,7 +115,7 @@ echo "Building openssl-${VERSION} for ${ARCHS}"
 
 for ARCH in ${ARCHS}
 do
-	if [[ "${ARCH}" == "i386" || "${ARCH}" == "x86_64" ]];
+	if [[ "${PLATFORM_NAME}" = "iphonesimulator" ]];
 	then
 		PLATFORM="iPhoneSimulator"
 	else
