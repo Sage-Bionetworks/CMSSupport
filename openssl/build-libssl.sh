@@ -24,7 +24,6 @@
 ###########################################################################
 #  Change values here													  #
 #                                                                         #
-#VERSION="1.0.2c"													      #
 SDKVERSION=`xcrun -sdk iphoneos --show-sdk-version`
 if [[ "${BITCODE_GENERATION_MODE}" == "bitcode" ]]; then
     BITCODE_FLAG=" -fembed-bitcode"
@@ -45,13 +44,8 @@ echo "Bitcode flag: '${BITCODE_FLAG}'"
 #    ARCHS="i386 x86_64 armv7 armv7s arm64"
 #fi
 
-if [ ${PLATFORM_NAME} == iphonesimulator ] ; then
-    echo "Simulator build--building for Intel only, no Apple Silicon support"
-    ARCHS="i386 x86_64"
-else
-    echo "iPhoneOS build--building all standard device architectures"
-    ARCHS="${ARCHS_STANDARD}"
-fi
+ARCHS="${ARCHS_STANDARD}"
+
 
 #																		  #
 ###########################################################################
@@ -98,10 +92,10 @@ if [ ! -e openssl-${VERSION}.tar.gz ]; then
     curl -O https://www.openssl.org/source/openssl-${VERSION}.tar.gz
 else
 	echo "Using openssl-${VERSION}.tar.gz"
-    if [ "${OUT_DIR}/libssl.a" -nt "openssl-${VERSION}.tar.gz" ]; then
-        echo "Output files newer than input files, skipping"
-        exit 0
-    fi
+#    if [ "${OUT_DIR}/libssl.a" -nt "openssl-${VERSION}.tar.gz" ]; then
+#        echo "Output files newer than input files, skipping"
+#        exit 0
+#    fi
 fi
 
 mkdir -p "${DERIVED_FILE_DIR}/src"
@@ -135,13 +129,34 @@ do
 	LOG="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/build-openssl-${VERSION}.log"
 
 	set +e
-    if [[ "$VERSION" =~ 1.0.0. ]]; then
-	    ./Configure BSD-generic32 --openssldir="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
-	elif [ "${ARCH}" == "x86_64" ]; then
-	    ./Configure darwin64-x86_64-cc --openssldir="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
+    PREFIX="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk"
+    #if [[ "$VERSION" =~ 1.0.0. ]]; then
+	#    ./Configure BSD-generic32 --openssldir="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
+    
+    if [[ "${PLATFORM_NAME}" = "iphonesimulator" ]]; then
+        ./Configure iossimulator-xcrun no-shared no-dso no-hw no-engine --openssldir=${PREFIX} --prefix=${PREFIX} ${BITCODE_FLAG} > "${LOG}" 2>&1
     else
-	    ./Configure iphoneos-cross --openssldir="${DERIVED_FILE_DIR}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
+        if [ "${ARCH}" == "armv7" ]; then
+            ./Configure ios-xcrun no-shared no-dso no-hw no-engine no-asm --openssldir=${PREFIX} --prefix=${PREFIX}${BITCODE_FLAG} > "${LOG}" 2>&1
+        else
+            ./Configure ios64-xcrun no-shared no-dso no-hw no-engine --openssldir=${PREFIX} --prefix=${PREFIX} ${BITCODE_FLAG}> "${LOG}" 2>&1
+        fi
     fi
+    
+    #if [ "${ARCH}" == "i386" ]; then
+    #   ./Configure darwin-i386-cc --openssldir=${PREFIX} --prefix=${PREFIX} > "${LOG}" 2>&1
+    #else
+    #    if [ "${ARCH}" == "x86_64" ]; then
+    #        ./Configure darwin64-x86_64-cc --openssldir=${PREFIX} --prefix=${PREFIX} > "${LOG}" 2>&1
+    #    else
+    #        if [[ "${PLATFORM_NAME}" = "iphonesimulator" ]]; then
+    #            echo `pwd`
+    #            ./Configure darwin64-arm64-cc --openssldir=${PREFIX} --prefix=${PREFIX} > "${LOG}" 2>&1
+    #        else
+    #            ./Configure ios64-cross no-shared no-dso no-hw no-engine --openssldir=${PREFIX} --prefix=${PREFIX} > "${LOG}" 2>&1
+    #        fi
+    #    fi
+    #fi
     
     if [ $? != 0 ];
     then 
@@ -150,7 +165,7 @@ do
     fi
 
 	# add -isysroot to CC=
-	sed -ie "s!^CFLAG=!CFLAG=-isysroot ${CROSS_TOP}/SDKs/${CROSS_SDK} -miphoneos-version-min=7.0${BITCODE_FLAG} !" "Makefile"
+	#sed -ie "s!^CFLAG=!CFLAG=-isysroot ${CROSS_TOP}/SDKs/${CROSS_SDK} -miphoneos-version-min=9.0${BITCODE_FLAG} !" "Makefile"
 
 #    echo `grep ^CFLAG= Makefile`
 
@@ -187,7 +202,7 @@ do
 done
 
 mkdir -p ${OUT_DIR}/include
-if [[ "${ARCH}" == "i386" || "${ARCH}" == "x86_64" ]];
+if [[ "${PLATFORM_NAME}" = "iphonesimulator" ]];
 then
 PLATFORM="iPhoneSimulator"
 else
