@@ -1,15 +1,26 @@
 # CMSSupport
 
-This project builds a drop-in framework you can link into your app alongside AppCore, thus enabling it to
-apply Bridge-compatible CMS encryption to sensitive data files while they reside on the device awaiting
-upload, and during the upload process.
+## OpenSSL
+
+The Swift package contained within this repo is provided to allow Bridge studies to use OpenSSL to upload 
+archives that need to be signed with a .pem file.
+
+The intended use is to apply Bridge-compatible CMS encryption to sensitive data files while they reside on the 
+device awaiting upload, and during the upload process.
+
+You will also need to supply an X.509 public encryption key (.pem) file, whose name is your Bridge study name
+with the .pem extension, in your app's resources.
+
+## CMSSupport - Deprecated
+
+CMSSupport.xcodeproj is only included here for older projects that still use AppCore. That project builds a 
+drop-in framework you can link into your app alongside AppCore.
 
 You can either build the framework target of CMSSupport, copy it to your app's project folder, and link to it
 as a standalone framework; or add CMSSupport as a subproject of your app's project, and link to its framework
 target's product.
 
-You will also need to supply an X.509 public encryption key (.pem) file, whose name is your Bridge study name
-with the .pem extension, in your app's resources.
+The CMSSupport project is provided as-is and is no longer actively supported by Sage Bionetworks.
 
 ## License
 
