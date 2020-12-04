@@ -19,6 +19,17 @@
 			name = libssl;
 			productName = libssl;
 		};
+		FF28CD6125782B600007031B /* BuildXCFramework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FF28CD6225782B600007031B /* Build configuration list for PBXAggregateTarget "BuildXCFramework" */;
+			buildPhases = (
+				FF28CD6A25782B6C0007031B /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = BuildXCFramework;
+			productName = BuildXCFramework;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -548,7 +559,7 @@
 		80A9C1D41B30F0BC0058A3B0 /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		80A9C2201B30F1050058A3B0 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = libssl/libcrypto.a; sourceTree = "<group>"; };
 		80A9C2211B30F1050058A3B0 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = libssl/libssl.a; sourceTree = "<group>"; };
-		80B2C4A11E3AAC25001F9FEA /* libOpenSSL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpenSSL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B2C4A11E3AAC25001F9FEA /* libopenssl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libopenssl.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B2C5471E3AB528001F9FEA /* openssl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = openssl.h; path = openssl/openssl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -702,7 +713,7 @@
 			children = (
 				60674AE31B30A93900A1917D /* openssl.framework */,
 				60674AEE1B30A93900A1917D /* opensslTests.xctest */,
-				80B2C4A11E3AAC25001F9FEA /* libOpenSSL.a */,
+				80B2C4A11E3AAC25001F9FEA /* libopenssl.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -980,7 +991,7 @@
 			);
 			name = "OpenSSL (iOS Static Library)";
 			productName = "OpenSSL (iOS Static Library)";
-			productReference = 80B2C4A11E3AAC25001F9FEA /* libOpenSSL.a */;
+			productReference = 80B2C4A11E3AAC25001F9FEA /* libopenssl.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -1005,6 +1016,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
+					FF28CD6125782B600007031B = {
+						CreatedOnToolsVersion = 12.1;
+						DevelopmentTeam = KA9Z8R6M6K;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 60674ADD1B30A93900A1917D /* Build configuration list for PBXProject "openssl" */;
@@ -1024,6 +1040,7 @@
 				60674AED1B30A93900A1917D /* opensslTests */,
 				60674AFF1B30A96E00A1917D /* libssl */,
 				80B2C4A01E3AAC25001F9FEA /* OpenSSL (iOS Static Library) */,
+				FF28CD6125782B600007031B /* BuildXCFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -1098,7 +1115,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# clear out any old version\nrm -rf libssl\n# copy appropriate libssl products here\ncp -R \"${BUILT_PRODUCTS_DIR}/libssl\" .\n";
+			shellScript = "# clear out any old version\nrm -rf ./libssl\n# copy appropriate libssl products here\ncp -R \"${BUILT_PRODUCTS_DIR}/libssl\" .\n";
 		};
 		80B2C5491E3AB541001F9FEA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1111,7 +1128,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# ok we're done with libssl so get rid of it\nrm -rf libssl\n";
+			shellScript = "# ok we're done with libssl so get rid of it\nrm -rf ./libssl\n";
+		};
+		FF28CD6A25782B6C0007031B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nCONFIGURATION=Release\nSCHEME=libOpenSSL\nSIMULATOR_SDK=\"iphonesimulator\"\nIOS_SDK=\"iphoneos\"\nNAME=\"openssl\"\n\n### Paths\n\nBUILD_PATH=\"./build\"\nDERIVED_DATA_PATH=\"./derivedData\"\nBUILD_PATH_SIMULATOR=\"${BUILD_PATH}/${CONFIGURATION}-${SIMULATOR_SDK}\"\nBUILD_PATH_IPHONE=\"${BUILD_PATH}/${CONFIGURATION}-${IOS_SDK}\"\nBUILD_PATH_XCFRAMEWORK=\"${BUILD_PATH}/${NAME}.xcframework\"\n\nxcodebuild clean build \\\n    -scheme ${SCHEME} \\\n    -sdk ${SIMULATOR_SDK} \\\n    -configuration ${CONFIGURATION} \\\n    -derivedDataPath \"${DERIVED_DATA_PATH}/${SIMULATOR_SDK}\" \\\n    CONFIGURATION_BUILD_DIR=${BUILD_PATH_SIMULATOR} \\\n    BITCODE_GENERATION_MODE=marker \\\n\nxcodebuild clean build \\\n    -scheme ${SCHEME} \\\n    -sdk ${IOS_SDK} \\\n    -configuration ${CONFIGURATION} \\\n    -derivedDataPath \"${DERIVED_DATA_PATH}/${IOS_SDK}\" \\\n    CONFIGURATION_BUILD_DIR=${BUILD_PATH_IPHONE} \\\n    BITCODE_GENERATION_MODE=bitcode \\\n                   \nrm -rf ${DERIVED_DATA_PATH}\n\nrm -rf ${BUILD_PATH_XCFRAMEWORK}\nxcodebuild -create-xcframework \\\n    -library ${BUILD_PATH_IPHONE}/lib${NAME}.a \\\n    -headers ${BUILD_PATH_IPHONE}/include \\\n    -library ${BUILD_PATH_SIMULATOR}/lib${NAME}.a \\\n    -headers ${BUILD_PATH_SIMULATOR}/include \\\n    -output ${BUILD_PATH_XCFRAMEWORK}\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1367,6 +1401,7 @@
 		80B2C4A71E3AAC25001F9FEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEAD_CODE_STRIPPING = NO;
@@ -1378,7 +1413,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
-				PRODUCT_NAME = OpenSSL;
+				PRODUCT_NAME = openssl;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1386,6 +1421,7 @@
 		80B2C4A81E3AAC25001F9FEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEAD_CODE_STRIPPING = NO;
@@ -1395,8 +1431,26 @@
 				);
 				OTHER_LDFLAGS = "-all_load";
 				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
-				PRODUCT_NAME = OpenSSL;
+				PRODUCT_NAME = openssl;
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FF28CD6325782B600007031B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KA9Z8R6M6K;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FF28CD6425782B600007031B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KA9Z8R6M6K;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1444,6 +1498,15 @@
 			buildConfigurations = (
 				80B2C4A71E3AAC25001F9FEA /* Debug */,
 				80B2C4A81E3AAC25001F9FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF28CD6225782B600007031B /* Build configuration list for PBXAggregateTarget "BuildXCFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF28CD6325782B600007031B /* Debug */,
+				FF28CD6425782B600007031B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

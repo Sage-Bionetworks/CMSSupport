@@ -3,3 +3,5 @@ CMSSupport.xccheckout
 CMSSupport.xcodeproj/xcuserdata/*.xcuserdatad
 *.xcuserdatad
 UserInterfaceState.xcuserstate
+openssl/build/*
+!openssl/build/openssl.xcframework
