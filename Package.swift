@@ -13,6 +13,9 @@ let package = Package(
         .library(
             name: "openssl",
             targets: ["openssl"]),
+        .library(
+            name: "CMSSupport",
+            targets: ["CMSSupport"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -21,5 +24,7 @@ let package = Package(
     targets: [
         .binaryTarget(name: "openssl",
                       path: "openssl/build/openssl.xcframework"),
+        .binaryTarget(name: "CMSSupport",
+                      path: "output/CMSSupport.xcframework"),
     ]
 )

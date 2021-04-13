@@ -1,0 +1,6 @@
+framework module CMSSupport {
+  umbrella header "CMSSupport.h"
+
+  export *
+  module * { export * }
+}
