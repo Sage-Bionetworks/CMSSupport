@@ -6,22 +6,25 @@ import PackageDescription
 let package = Package(
     name: "CMSSupport",
     platforms: [
-        .iOS(.v9)
+        .iOS(.v9),
+        .macOS(.v11),
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "CMSSupport",
-            targets: ["CMSSupport", "openssl"]),
+            targets: ["CMSEncryption"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
-        .binaryTarget(name: "openssl",
-                      path: "openssl/build/openssl.xcframework"),
         .binaryTarget(name: "CMSSupport",
                       path: "output/CMSSupport.xcframework"),
+        .target(name: "CMSEncryption",
+                dependencies: [
+                    .target(name: "CMSSupport", condition: .when(platforms: [.iOS]))
+                ])
     ]
 )
