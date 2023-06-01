@@ -39,10 +39,10 @@ echo "Bitcode flag: '${BITCODE_FLAG}'"
 
 if [ ${ACTION} == install ] ; then
     echo "Archive build--excluding Simulator binaries"
-    ARCHS="armv7 armv7s arm64"
+    ARCHS="arm64"
 else
     echo "Dev build--including Simulator binaries"
-    ARCHS="i386 x86_64 armv7 armv7s arm64"
+    ARCHS="x86_64 arm64"
 fi
 
 #																		  #
